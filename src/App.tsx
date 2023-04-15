@@ -14,6 +14,7 @@ const App: FC = () => {
     } else {
       setDeadline(Number(e.target.value));
     }
+    console.log();
   };
 
   const addTask = (): void => {
