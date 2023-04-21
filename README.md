@@ -40,3 +40,36 @@ function 함수(x : number) : number(어떤 값이 리턴 될 것인가를 나�
 }
 // 무조건 넘버라는 파라미터로 넘버라는 리턴값이 나옴
 ```
+
+<br>
+
+## array에 쓸 수 있는 tuple 타입
+
+type Member = [number, boolean]<br>
+let john : Member = [123, turn] = 튜플 타입이라고 불리움
+
+<br>
+
+## object에 타입지정해야할 속성이 너무 많다면
+
+```javascript
+type Member = {
+    [key : string] : string
+    //모든 object 속성이라는 의미
+
+    let jo = Member { name : "kim" , age : "123"}
+}
+```
+
+<br>
+
+## class 타입 지정
+
+```javascript
+class User {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+}
+```
