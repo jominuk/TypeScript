@@ -60,13 +60,14 @@ function displayProductDetail(
 // }
 
 type UpdateProduct = Partial<Product>;
-// 3. 특정 상품 정보를 업데이트 하는 함수
-function updateProductItem(productItem: Partial<Product>) {}
 
-// Partial 이라는 유틸리티 타입을 사용해 기존의 Product를 재활용 하는 관점
-// VS코드 상에서 UpdateProduct에 포인트를 올려두었을 때 interface로 정의한 옵셔널 체이닝과 같이 보여짐
-// 옵셔널 체이닝을 이용할 경우 부분 적으로 일부만 사용 가능
-// 따라서 2번과 3번은 동일하게 사용 가능하다는걸 보여줌
+// 3. 특정 상품 정보를 업데이트 하는 함수
+function updateProductItem(productItem: Partial<Product>) {
+  // Partial 이라는 유틸리티 타입을 사용해 기존의 Product를 재활용 하는 관점
+  // VS코드 상에서 UpdateProduct에 포인트를 올려두었을 때 interface로 정의한 옵셔널 체이닝과 같이 보여짐
+  // 옵셔널 체이닝을 이용할 경우 부분 적으로 일부만 사용 가능
+  // 따라서 2번과 3번은 동일하게 사용 가능하다는걸 보여줌
+}
 ```
 
 ### 응용2

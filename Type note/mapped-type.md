@@ -25,6 +25,4 @@ const ages : HeroAges = {
     Capt : 100,
     Thor : 1000,
 }
-
-// map함수 인것 같이 려서 나타내는 것
 ```
