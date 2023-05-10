@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, useState } from "react";
+import { FC, ChangeEvent, useState } from "react";
 import "./App.css";
 import { ITask } from "./interfaces";
 import TodoTask from "./Components/TodoTask";
