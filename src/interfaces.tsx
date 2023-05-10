@@ -1,4 +1,4 @@
 export interface ITask {
-  taskName: string;
+  name: string;
   deadline: number;
 }

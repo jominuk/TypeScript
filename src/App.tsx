@@ -18,16 +18,16 @@ const App: FC = () => {
   };
 
   const addTask = (): void => {
-    const newTask = { taskName: task, deadline: deadline };
+    const newTask = { name: task, deadline: deadline };
     setTodoList([...todoList, newTask]);
     setTask("");
     setDeadline(0);
   };
 
-  const completeTask = (taskNameToDelete: string): void => {
+  const completeTask = (nameToDelete: string): void => {
     setTodoList(
       todoList.filter((task) => {
-        return task.taskName !== taskNameToDelete;
+        return task.name !== nameToDelete;
       })
     );
   };
