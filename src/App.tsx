@@ -4,30 +4,29 @@ import { ITask } from "./interfaces";
 import TodoTask from "./Components/TodoTask";
 
 const App: FC = () => {
-  const [task, setTask] = useState<string>("");
+  const [title, setTitle] = useState<string>("");
   const [deadline, setDeadline] = useState<number>(0);
   const [todoList, setTodoList] = useState<ITask[]>([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    if (e.target.name === "task") {
-      setTask(e.target.value);
+    if (e.target.name === "title") {
+      setTitle(e.target.value);
     } else {
       setDeadline(Number(e.target.value));
     }
-    console.log();
   };
 
-  const addTask = (): void => {
-    const newTask = { name: task, deadline: deadline };
+  const addTask = () => {
+    const newTask = { name: title, deadline: deadline };
     setTodoList([...todoList, newTask]);
-    setTask("");
+    setTitle("");
     setDeadline(0);
   };
 
   const completeTask = (nameToDelete: string): void => {
     setTodoList(
-      todoList.filter((task) => {
-        return task.name !== nameToDelete;
+      todoList.filter((id) => {
+        return id.name !== nameToDelete;
       })
     );
   };
@@ -38,9 +37,9 @@ const App: FC = () => {
         <div className="inputContainer">
           <input
             type="text"
-            placeholder="Task..."
-            name="task"
-            value={task}
+            placeholder="title..."
+            name="title"
+            value={title}
             onChange={handleChange}
           />
           <input
@@ -54,8 +53,10 @@ const App: FC = () => {
         <button onClick={addTask}> Add Task </button>
       </div>
       <div className="todoList">
-        {todoList.map((task: ITask, key: number) => {
-          return <TodoTask key={key} task={task} completeTask={completeTask} />;
+        {todoList.map((title: ITask, key: number) => {
+          return (
+            <TodoTask key={key} task={title} completeTask={completeTask} />
+          );
         })}
       </div>
     </div>
