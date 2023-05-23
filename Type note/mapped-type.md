@@ -26,3 +26,14 @@ const ages : HeroAges = {
     Thor : 1000,
 }
 ```
+
+## mapped types
+
+```javascript
+type Heroes = "Hulk" | "Thor" | "Capt";
+type HeroAges = { [K in Heroes]: number };
+const ages: HeroAges = {
+  Hulk: "a", // hulk's age must be number
+};
+
+```
